@@ -47,7 +47,7 @@
             // 
             this.AddRandomButton.Location = new System.Drawing.Point(43, 81);
             this.AddRandomButton.Name = "AddRandomButton";
-            this.AddRandomButton.Size = new System.Drawing.Size(206, 35);
+            this.AddRandomButton.Size = new System.Drawing.Size(228, 35);
             this.AddRandomButton.TabIndex = 0;
             this.AddRandomButton.Text = "Add Random array";
             this.AddRandomButton.UseVisualStyleBackColor = true;
@@ -55,7 +55,7 @@
             // 
             // numericUpDown
             // 
-            this.numericUpDown.Location = new System.Drawing.Point(203, 33);
+            this.numericUpDown.Location = new System.Drawing.Point(192, 33);
             this.numericUpDown.Maximum = new decimal(new int[] {
             8,
             0,
@@ -67,7 +67,7 @@
             0,
             0});
             this.numericUpDown.Name = "numericUpDown";
-            this.numericUpDown.Size = new System.Drawing.Size(46, 22);
+            this.numericUpDown.Size = new System.Drawing.Size(79, 22);
             this.numericUpDown.TabIndex = 1;
             this.numericUpDown.Value = new decimal(new int[] {
             1,
@@ -80,34 +80,36 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(40, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 17);
+            this.label1.Size = new System.Drawing.Size(139, 17);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Count of elements:";
+            this.label1.Text = "Number of elements:";
             // 
             // ShakerButton
             // 
-            this.ShakerButton.Location = new System.Drawing.Point(297, 81);
+            this.ShakerButton.Location = new System.Drawing.Point(340, 81);
             this.ShakerButton.Name = "ShakerButton";
-            this.ShakerButton.Size = new System.Drawing.Size(206, 35);
+            this.ShakerButton.Size = new System.Drawing.Size(266, 35);
             this.ShakerButton.TabIndex = 3;
             this.ShakerButton.Text = "Run shaker demonstration";
             this.ShakerButton.UseVisualStyleBackColor = true;
+            this.ShakerButton.Click += new System.EventHandler(this.ShakerButton_Click);
             // 
             // BubbleButton
             // 
-            this.BubbleButton.Location = new System.Drawing.Point(297, 26);
+            this.BubbleButton.Location = new System.Drawing.Point(340, 26);
             this.BubbleButton.Name = "BubbleButton";
-            this.BubbleButton.Size = new System.Drawing.Size(206, 35);
+            this.BubbleButton.Size = new System.Drawing.Size(266, 35);
             this.BubbleButton.TabIndex = 4;
             this.BubbleButton.Text = "Run bubble demonstration";
             this.BubbleButton.UseVisualStyleBackColor = true;
+            this.BubbleButton.Click += new System.EventHandler(this.BubbleButton_Click);
             // 
             // ChartsButton
             // 
             this.ChartsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ChartsButton.Location = new System.Drawing.Point(548, 26);
+            this.ChartsButton.Location = new System.Drawing.Point(693, 26);
             this.ChartsButton.Name = "ChartsButton";
-            this.ChartsButton.Size = new System.Drawing.Size(206, 90);
+            this.ChartsButton.Size = new System.Drawing.Size(228, 90);
             this.ChartsButton.TabIndex = 5;
             this.ChartsButton.Text = "Show charts";
             this.ChartsButton.UseVisualStyleBackColor = true;
@@ -117,7 +119,7 @@
             this.BubblePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.BubblePictureBox.Location = new System.Drawing.Point(43, 169);
             this.BubblePictureBox.Name = "BubblePictureBox";
-            this.BubblePictureBox.Size = new System.Drawing.Size(711, 105);
+            this.BubblePictureBox.Size = new System.Drawing.Size(878, 105);
             this.BubblePictureBox.TabIndex = 6;
             this.BubblePictureBox.TabStop = false;
             // 
@@ -126,7 +128,7 @@
             this.ShakerPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ShakerPictureBox.Location = new System.Drawing.Point(43, 331);
             this.ShakerPictureBox.Name = "ShakerPictureBox";
-            this.ShakerPictureBox.Size = new System.Drawing.Size(711, 105);
+            this.ShakerPictureBox.Size = new System.Drawing.Size(878, 105);
             this.ShakerPictureBox.TabIndex = 7;
             this.ShakerPictureBox.TabStop = false;
             // 
@@ -152,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 466);
+            this.ClientSize = new System.Drawing.Size(969, 459);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ShakerPictureBox);
@@ -164,7 +166,7 @@
             this.Controls.Add(this.numericUpDown);
             this.Controls.Add(this.AddRandomButton);
             this.Name = "SortForm";
-            this.Text = "Form1";
+            this.Text = "Form";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BubblePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShakerPictureBox)).EndInit();
