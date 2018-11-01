@@ -113,6 +113,7 @@
             this.ChartsButton.TabIndex = 5;
             this.ChartsButton.Text = "Show charts";
             this.ChartsButton.UseVisualStyleBackColor = true;
+            this.ChartsButton.Click += new System.EventHandler(this.ChartsButton_Click);
             // 
             // BubblePictureBox
             // 

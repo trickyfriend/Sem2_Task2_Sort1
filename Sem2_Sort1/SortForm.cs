@@ -46,7 +46,9 @@ namespace Sem2_Sort1
 
         private void BubbleButton_Click(object sender, EventArgs e)
         {
-            int[] arr = startArr;
+            int[] arr = new int[(int)numericUpDown.Value];
+            Array.Copy(startArr, arr,(int)numericUpDown.Value);
+
             for (int i = 1; i < arr.Length; i++)
                 for (int j = arr.Length - 1; j >= i; j--)
                 {
@@ -59,53 +61,72 @@ namespace Sem2_Sort1
                         arr[j] = temp;
                         DrawFrame(BubblePictureBox, arr, j - 1, j, -2);
                     }
-                    else
-                    {
-                        DrawFrame(BubblePictureBox, arr, j - 1, j, -2);
-                    }
                 }
             DrawFrame(BubblePictureBox, arr, -1, -1, -2);
         }
 
         private void ShakerButton_Click(object sender, EventArgs e)  // не разобрался с этой сортировкой. Скорее всего, показывает неправильно. Посмотреть видео и разобраться.
         {
-            int[] arr = startArr;
-            int left = 1, right = arr.Length - 1, last = right;
-            do
-            {
-                for (int j = right; j >= left; j--)
-                {
-                    DrawFrame(ShakerPictureBox, arr, -1, -1, j - 1);
-                    if (arr[j - 1] > arr[j])
-                    {
-                        DrawFrame(ShakerPictureBox, arr, j, j - 1, -2);
-                        int t = arr[j - 1];
-                        arr[j - 1] = arr[j];
-                        arr[j] = t;
-                        last = j;
-                        DrawFrame(ShakerPictureBox, arr, j - 1, j, -2);
-                    }
-                }
-                DrawFrame(ShakerPictureBox, arr, -1, -1, -2);
-                left = last;
-                for (int j = left; j <= right; j++)
-                {
-                    DrawFrame(ShakerPictureBox, arr, -1, -1, j + 1); // mistake awaiting
-                    if (arr[j - 1] > arr[j])
-                    {
-                        DrawFrame(ShakerPictureBox, arr, j, j - 1, -2);
-                        int t = arr[j - 1];
-                        arr[j - 1] = arr[j];
-                        arr[j] = t;
-                        last = j;
-                        DrawFrame(ShakerPictureBox, arr, j - 1, j, -2);
-                    }
-                }  
-                right = last - 1;
-                DrawFrame(ShakerPictureBox, arr, -1, -1 ,-2);
+            int[] arr = new int[(int)numericUpDown.Value];
+            Array.Copy(startArr, arr, (int)numericUpDown.Value);
 
+            if(arr.Count() != 1)
+            {
+                int left = 1, right = arr.Length - 1, last = right;
+                do
+                {
+                    for (int j = right; j >= left; j--)
+                    {
+                        DrawFrame(ShakerPictureBox, arr, -1, -1, j - 1);
+                        if (arr[j - 1] > arr[j])
+                        {
+                            DrawFrame(ShakerPictureBox, arr, j, j - 1, -2);
+                            int t = arr[j - 1];
+                            arr[j - 1] = arr[j];
+                            arr[j] = t;
+                            last = j;
+                            DrawFrame(ShakerPictureBox, arr, j - 1, j, -2);
+                        }
+                    }
+                    left = last;
+                    for (int j = left; j <= right; j++)
+                    {
+                        DrawFrame(ShakerPictureBox, arr, -1, -1, j - 1);
+                        if (arr[j - 1] > arr[j])
+                        {
+                            DrawFrame(ShakerPictureBox, arr, j, j - 1, -2);
+                            int t = arr[j - 1];
+                            arr[j - 1] = arr[j];
+                            arr[j] = t;
+                            last = j;
+                            DrawFrame(ShakerPictureBox, arr, j - 1, j, -2);
+                        }
+                    }
+                    right = last - 1;
+
+                }
+                while (left < right);
             }
-            while (left < right);
+            DrawFrame(ShakerPictureBox, arr, -1, -1, -2);
+        }
+
+        private void ChartsButton_Click(object sender, EventArgs e)
+        {
+            ChartsForm chForm = new ChartsForm();
+            for (int i = 100; i <= 2000; i+=100)
+            {
+                int[] bubble = ArraySort.RandomArray(i);
+                int[] shaker = new int[i];
+                Array.Copy(bubble, shaker, i);
+                int compareCount, changeCount;
+                ArraySort.BubbleSort(bubble, out compareCount, out changeCount);
+                chForm.compareChart.Series[0].Points.AddXY(i, compareCount);
+                chForm.changeChart.Series[0].Points.AddXY(i, changeCount);
+                ArraySort.ShakerSort(shaker, out compareCount, out changeCount);
+                chForm.compareChart.Series[1].Points.AddXY(i, compareCount);
+                chForm.changeChart.Series[1].Points.AddXY(i, changeCount);
+            }
+            chForm.Show();
         }
     }
 }

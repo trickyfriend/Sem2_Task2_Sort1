@@ -8,3 +8,4 @@ C:\Users\Admin\Documents\Visual Studio 2017\Projects\Sem2_Sort1\Sem2_Sort1\obj\D
 C:\Users\Admin\Documents\Visual Studio 2017\Projects\Sem2_Sort1\Sem2_Sort1\obj\Debug\Sem2_Sort1.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\Visual Studio 2017\Projects\Sem2_Sort1\Sem2_Sort1\obj\Debug\Sem2_Sort1.exe
 C:\Users\Admin\Documents\Visual Studio 2017\Projects\Sem2_Sort1\Sem2_Sort1\obj\Debug\Sem2_Sort1.pdb
+C:\Users\Admin\Documents\Visual Studio 2017\Projects\Sem2_Sort1\Sem2_Sort1\obj\Debug\Sem2_Sort1.ChartsForm.resources
